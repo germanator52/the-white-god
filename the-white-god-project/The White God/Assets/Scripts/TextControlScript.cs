@@ -17,6 +17,8 @@ public class TextControlScript : MonoBehaviour {
     public GameObject dorisCanvas;
     public GameObject officeCanvas;
     public GameObject officeCanvas2;
+    public GameObject convenienceStoreFlyerCanvas;
+    public GameObject bibleCanvas;
 
     void Start()
     {
@@ -57,6 +59,24 @@ public class TextControlScript : MonoBehaviour {
             } else if (modifier == 11)
             {
                 Journal();
+            } else if (modifier == 12)
+            {
+                ChurchFlyer2();
+            } else if (modifier == 13)
+            {
+                MayoralRace2();
+            } else if (modifier == 14)
+            {
+                WantedPoster2();
+            } else if (modifier == 15)
+            {
+                CurfewNotice();
+            } else if (modifier == 16)
+            {
+                ObjectColliderScript.instance.Unpause(0);
+            } else if (modifier == 18)
+            {
+                BiblePassage();
             }
         }
     }
@@ -65,37 +85,31 @@ public class TextControlScript : MonoBehaviour {
     {
         if (i == 1)
         {
-            modifier = 1;
             text.text = "Sheriff Underwood,";
             policeCanvas.SetActive(false);
         }
         else if (i == 2)
         {
-            modifier = 2;
             text.text = "Arrest log - 4/30 - 5/13";
             policeCanvas.SetActive(false);
         }
         else if (i == 3)
         {
-            modifier = 3;
             text.text = "A picture of a church's sanctuary and a group of middle-aged people with warm, inviting smiles adorns this flyer.";
             townHallFlyerCanvas.SetActive(false);
         }
         else if (i == 4)
         {
-            modifier = 4;
             text.text = "It seemed that before, Avonfield had been in the middle of a mayoral election.";
             townHallFlyerCanvas.SetActive(false);
         }
         else if (i == 5)
         {
-            modifier = 5;
             text.text = "A single wanted poster joins the rest of the flyers.";
             townHallFlyerCanvas.SetActive(false);
         }
         else if (i == 6)
         {
-            modifier = 6;
             text.text = "This flyer is a simple white sheet of paper with a strange symbol of an eye.";
             townHallFlyerCanvas.SetActive(false);
         }
@@ -106,24 +120,48 @@ public class TextControlScript : MonoBehaviour {
         }
         else if (i == 8)
         {
-            modifier = 8;
             text.text = "5/7";
             dorisCanvas.SetActive(false);
         } else if (i == 9) {
-            modifier = 9;
             text.text = "(The binder contains logs of the motel's various guests over time.)";
             officeCanvas.SetActive(false);
         } else if (i == 10)
         {
-            modifier = 10;
             text.text = "Terry,";
             officeCanvas.SetActive(false);
         } else if (i == 11)
         {
-            modifier = 11;
             text.text = "5/5";
             officeCanvas2.SetActive(false);
+        } else if (i == 12)
+        {
+            text.text = "A picture of a church's sanctuary and a group of middle-aged people with warm, inviting smiles adorns this flyer.";
+            convenienceStoreFlyerCanvas.SetActive(false);
+        } else if (i == 13)
+        {
+            text.text = "It seemed that before, Avonfield had been in the middle of a mayoral election.";
+            convenienceStoreFlyerCanvas.SetActive(false);
+        } else if (i == 14)
+        {
+            text.text = "A single wanted poster joins the rest of the flyers.";
+            convenienceStoreFlyerCanvas.SetActive(false);
+        } else if (i == 15)
+        {
+            text.text = "This flyer has no attached picture. It is simply a message written in large text.";
+            convenienceStoreFlyerCanvas.SetActive(false);
+        } else if (i == 16)
+        {
+            text.text = "You notice an engraving on the bottom frame of the number 33.";
+        } else if (i == 17)
+        {
+            text.text = "The Bible is open to a specific page, and a specific passage is marked.  Will you read it?";
+            bibleCanvas.SetActive(true);
+        } else if (i == 18)
+        {
+            text.text = "You feel a strange urge to read it out loud and do so.";
+            bibleCanvas.SetActive(false);
         }
+        modifier = i;
         iteration = 1;
     }
 
@@ -419,6 +457,101 @@ public class TextControlScript : MonoBehaviour {
         {
             text.text = "I'm not sure anyone can.";
             officeCanvas.SetActive(true);
+        }
+        iteration++;
+    }
+
+    void ChurchFlyer2()
+    {
+        if (iteration == 4)
+        {
+            text.text = "Avonfield Church!  Join our lovely world today!";
+            convenienceStoreFlyerCanvas.SetActive(true);
+        }
+        else if (iteration == 3)
+        {
+            text.text = "Below the picture is a caption:";
+        }
+        else if (iteration == 2)
+        {
+            text.text = "Looking at him stirrs something in your mind, but before you can grab hold of it, it's gone.";
+        }
+        else if (iteration == 1)
+        {
+            text.text = "In the middle of them is a tall man who looked to be in his fifties, with short, well kept hair and a formal blue suit.";
+        }
+        iteration++;
+    }
+
+    void MayoralRace2()
+    {
+        if (iteration == 4)
+        {
+            text.text = "Re - elect Joshua McKinley as Avonfield mayor!";
+            convenienceStoreFlyerCanvas.SetActive(true);
+        }
+        else if (iteration == 3)
+        {
+            text.text = "A photo of a middle-aged man with short, tidy grey hair and a formal blue suit was plastered all over the wall, with a caption reading:";
+        }
+        else if (iteration == 2)
+        {
+            text.text = "In either case, as far as you could tell, there only seemed to be a single candidate.";
+        }
+        else if (iteration == 1)
+        {
+            text.text = "Or, perhaps, it had just finished one.";
+        }
+        iteration++;
+    }
+
+    void WantedPoster2()
+    {
+        if (iteration == 2)
+        {
+            text.text = "Wanted: Percy Alvarez.  Deviant and Dissenter";
+            convenienceStoreFlyerCanvas.SetActive(true);
+        }
+        else if (iteration == 1)
+        {
+            text.text = "It shows a photo of a young man with a caption beneath.";
+        }
+        iteration++;
+    }
+
+    void CurfewNotice()
+    {
+        if (iteration == 1)
+        {
+            text.text = "Remember the Curfew!";
+        } else if (iteration == 2)
+        {
+            text.text = "Anyone caught outside after 9:00 PM will be arrested or fined!";
+        } else if (iteration == 3)
+        {
+            text.text = "Minors will be escorted home and their parents will be issued a warning!";
+        } else if (iteration == 4)
+        {
+            text.text = "NO EXCEPTIONS!";
+            convenienceStoreFlyerCanvas.SetActive(true);
+        }
+        iteration++;
+    }
+
+    void BiblePassage()
+    {
+        if (iteration == 1)
+        {
+            text.text = "Again the devil took him to a very high mountain and showed him all the kingdoms of the world and their splendor.";
+        } else if (iteration == 2)
+        {
+            text.text = "You hear a strange, light clicking sound.";
+        } else if (iteration == 3)
+        {
+            text.text = "A small compartment has opened near the top of the podium.  What looks like a two digit combination lock is inside.";
+        } else if (iteration == 4)
+        {
+            ObjectColliderScript.instance.Unpause(0);
         }
         iteration++;
     }

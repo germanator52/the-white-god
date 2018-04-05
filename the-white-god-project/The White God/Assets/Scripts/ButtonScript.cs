@@ -84,4 +84,39 @@ public class ButtonScript : MonoBehaviour {
     {
         ObjectColliderScript.instance.Unpause(5);
     }
+
+    public void ChurchFlyer2()
+    {
+        TextControlScript.instance.ChangeText(12);
+    }
+
+    public void MayoralRace2()
+    {
+        TextControlScript.instance.ChangeText(13);
+    }
+
+    public void WantedPoster2()
+    {
+        TextControlScript.instance.ChangeText(14);
+    }
+
+    public void CurfewNotice()
+    {
+        TextControlScript.instance.ChangeText(15);
+    }
+
+    public void StoreNone()
+    {
+        ObjectColliderScript.instance.Unpause(6);
+    }
+
+    public void BibleYes()
+    {
+        TextControlScript.instance.ChangeText(18);
+    }
+
+    public void BibleNo()
+    {
+        ObjectColliderScript.instance.Unpause(7);
+    }
 }

@@ -16,11 +16,15 @@ public class ObjectColliderScript : MonoBehaviour {
     public GameObject dorisCanvas;
     public GameObject officeCanvas;
     public GameObject officeCanvas2;
+    public GameObject convenienceStoreFlyerCanvas;
+    public GameObject bibleCanvas;
 
     int objectID;
     string display;
 
     bool dorisNote = false;
+    bool churchPainting = false;
+    bool bible = false;
 
     private void Awake()
     {
@@ -55,8 +59,18 @@ public class ObjectColliderScript : MonoBehaviour {
                 {
                     TextControlScript.instance.ChangeText(7);
                     dorisNote = false;
-                } else if (objectID != 3 && objectID != 10 && objectID != 13 && objectID != 14)
+                } else if (churchPainting == true)
                 {
+                    TextControlScript.instance.ChangeText(16);
+                    churchPainting = false;
+                } else if (bible == true)
+                {
+                    bible = false;
+                    TextControlScript.instance.ChangeText(17);
+                }
+                else if (objectID != 3 && objectID != 10 && objectID != 13 && objectID != 14 && objectID != 17 && objectID != 20 && objectID != 24)
+                {
+                    Debug.Log(objectID);
                     text.text = "";
                     canvas.SetActive(false);
                 }
@@ -82,6 +96,18 @@ public class ObjectColliderScript : MonoBehaviour {
         {
             PlayerMovement.instance.speed = 0.0f;
             officeCanvas.SetActive(true);
+        } else if (objectID == 17)
+        {
+            PlayerMovement.instance.speed = 0.0f;
+            convenienceStoreFlyerCanvas.SetActive(true);
+        } else if (objectID == 20)
+        {
+            PlayerMovement.instance.speed = 0.0f;
+            churchPainting = true;
+        } else if (objectID == 24)
+        {
+            PlayerMovement.instance.speed = 0.0f;
+            bible = true;
         }
     }
 
@@ -102,6 +128,12 @@ public class ObjectColliderScript : MonoBehaviour {
         } else if (i == 5)
         {
             officeCanvas.SetActive(false);
+        } else if (i == 6)
+        {
+            convenienceStoreFlyerCanvas.SetActive(false);
+        } else if (i == 7)
+        {
+            bibleCanvas.SetActive(false);
         }
         canvas.SetActive(false);
         text.text = "";
