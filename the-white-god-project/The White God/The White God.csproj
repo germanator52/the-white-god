@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\ObjectColliderScript.cs" />
     <Compile Include="Assets\Scripts\ObjectScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PuzzleControllerScript.cs" />
     <Compile Include="Assets\Scripts\StartScript.cs" />
     <Compile Include="Assets\Scripts\TextControlScript.cs" />
   </ItemGroup>

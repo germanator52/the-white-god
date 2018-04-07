@@ -119,4 +119,14 @@ public class ButtonScript : MonoBehaviour {
     {
         ObjectColliderScript.instance.Unpause(7);
     }
+
+    public void PasswordNo()
+    {
+        ObjectColliderScript.instance.Unpause(8);
+    }
+
+    public void PasswordYes()
+    {
+        TextControlScript.instance.ChangeText(19);
+    }
 }

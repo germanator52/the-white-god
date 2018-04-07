@@ -18,6 +18,7 @@ public class ObjectColliderScript : MonoBehaviour {
     public GameObject officeCanvas2;
     public GameObject convenienceStoreFlyerCanvas;
     public GameObject bibleCanvas;
+    public GameObject passwordCanvas;
 
     int objectID;
     string display;
@@ -113,27 +114,46 @@ public class ObjectColliderScript : MonoBehaviour {
 
     public void Unpause(int i)
     {
+        StartCoroutine(UnpauseRoutine(i));
+    }
+
+    IEnumerator UnpauseRoutine(int i)
+    {
         if (i == 1)
         {
             policeCanvas.SetActive(false);
-        } else if (i == 2)
+        }
+        else if (i == 2)
         {
             townHallFlyerCanvas.SetActive(false);
-        } else if (i == 3)
+        }
+        else if (i == 3)
         {
             dorisCanvas.SetActive(false);
-        } else if (i == 4)
+        }
+        else if (i == 4)
         {
             officeCanvas2.SetActive(false);
-        } else if (i == 5)
+        }
+        else if (i == 5)
         {
             officeCanvas.SetActive(false);
-        } else if (i == 6)
+        }
+        else if (i == 6)
         {
             convenienceStoreFlyerCanvas.SetActive(false);
-        } else if (i == 7)
+        }
+        else if (i == 7)
         {
             bibleCanvas.SetActive(false);
+        }
+        else if (i == 8)
+        {
+            passwordCanvas.SetActive(false);
+        }
+        else if (i == 9)
+        {
+            yield return new WaitForSeconds(3.0f);
         }
         canvas.SetActive(false);
         text.text = "";

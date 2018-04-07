@@ -12,6 +12,7 @@ public class TextControlScript : MonoBehaviour {
 
     public Text text;
 
+    public GameObject canvas;
     public GameObject policeCanvas;
     public GameObject townHallFlyerCanvas;
     public GameObject dorisCanvas;
@@ -19,6 +20,7 @@ public class TextControlScript : MonoBehaviour {
     public GameObject officeCanvas2;
     public GameObject convenienceStoreFlyerCanvas;
     public GameObject bibleCanvas;
+    public GameObject passwordCanvas;
 
     void Start()
     {
@@ -73,7 +75,7 @@ public class TextControlScript : MonoBehaviour {
                 CurfewNotice();
             } else if (modifier == 16)
             {
-                ObjectColliderScript.instance.Unpause(0);
+                Painting();
             } else if (modifier == 18)
             {
                 BiblePassage();
@@ -152,6 +154,7 @@ public class TextControlScript : MonoBehaviour {
         } else if (i == 16)
         {
             text.text = "You notice an engraving on the bottom frame of the number 33.";
+            PuzzleControllerScript.instance.password = true;
         } else if (i == 17)
         {
             text.text = "The Bible is open to a specific page, and a specific passage is marked.  Will you read it?";
@@ -160,6 +163,13 @@ public class TextControlScript : MonoBehaviour {
         {
             text.text = "You feel a strange urge to read it out loud and do so.";
             bibleCanvas.SetActive(false);
+        } else if (i == 19)
+        {
+            text.text = "You enter the password.";
+            passwordCanvas.SetActive(false);
+            PuzzleControllerScript.instance.stairway.SetActive(true);
+            PuzzleControllerScript.instance.stairwayCover.SetActive(false);
+            ObjectColliderScript.instance.Unpause(9);
         }
         modifier = i;
         iteration = 1;
@@ -550,6 +560,22 @@ public class TextControlScript : MonoBehaviour {
         {
             text.text = "A small compartment has opened near the top of the podium.  What looks like a two digit combination lock is inside.";
         } else if (iteration == 4)
+        {
+            text.text = "Enter the password?";
+            if (PuzzleControllerScript.instance.password == true)
+            {
+                passwordCanvas.SetActive(true);
+            } else if (PuzzleControllerScript.instance.password == false)
+            {
+                ObjectColliderScript.instance.Unpause(0);
+            }
+        }
+        iteration++;
+    }
+
+    void Painting()
+    {
+        if (iteration == 2)
         {
             ObjectColliderScript.instance.Unpause(0);
         }
