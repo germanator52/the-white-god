@@ -68,7 +68,7 @@ public class DoorManagerScript : MonoBehaviour {
         }
         else if (doorID == 6)
         {
-            Vector3 newVector = new Vector3(0, -1, 0);
+            Vector3 newVector = new Vector3(17, -7, 0);
             newTransform = newVector;
             PlayerMovement.instance.inside = false;
         }
@@ -86,13 +86,13 @@ public class DoorManagerScript : MonoBehaviour {
         }
         else if (doorID == 9)
         {
-            Vector3 newVector = new Vector3(51.5f, -24, 0);
+            Vector3 newVector = new Vector3(51.5f, -20, 0);
             newTransform = newVector;
             PlayerMovement.instance.inside = false;
         }
         else if (doorID == 10)
         {
-            Vector3 newVector = new Vector3(94, -15, 0);
+            Vector3 newVector = new Vector3(74.5f, -15, 0);
             newTransform = newVector;
             PlayerMovement.instance.inside = false;
         }
