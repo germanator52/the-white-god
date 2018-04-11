@@ -11,6 +11,9 @@ public class ObjectColliderScript : MonoBehaviour {
     public Text text;
     public string[] textArray;
 
+    public AudioSource doorLock;
+    public AudioSource rumble;
+
     public GameObject policeCanvas;
     public GameObject townHallFlyerCanvas;
     public GameObject dorisCanvas;
@@ -81,7 +84,10 @@ public class ObjectColliderScript : MonoBehaviour {
 
     void CheckForButtons()
     {
-        if (objectID == 3)
+        if (objectID == 2)
+        {
+            doorLock.Play();
+        } else if (objectID == 3)
         {
             PlayerMovement.instance.speed = 0.0f;
             policeCanvas.SetActive(true);
@@ -153,7 +159,9 @@ public class ObjectColliderScript : MonoBehaviour {
         }
         else if (i == 9)
         {
+            rumble.Play();
             yield return new WaitForSeconds(3.0f);
+            rumble.Stop();
         }
         canvas.SetActive(false);
         text.text = "";

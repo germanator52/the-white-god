@@ -19,6 +19,7 @@ public class DoorScript : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
+            PlayerMovement.instance.Door();
             DoorManagerScript.instance.SetID(doorNumber);
             SceneManager.LoadScene(targetScene);
         }
