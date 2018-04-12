@@ -69,5 +69,12 @@ public class PlayerMovement : MonoBehaviour {
     public void Stairs()
     {
         stairs.Play();
+        StartCoroutine(PlayerDestroy());
+    }
+
+    IEnumerator PlayerDestroy()
+    {
+        yield return new WaitForSeconds(5.0f);
+        Destroy(gameObject);
     }
 }
