@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator PlayerDestroy()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(7.0f);
         Destroy(gameObject);
     }
 }
