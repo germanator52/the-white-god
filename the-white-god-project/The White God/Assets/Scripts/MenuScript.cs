@@ -37,4 +37,9 @@ public class MenuScript : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void Continue()
+    {
+        PauseScript.instance.Continue();
+    }
 }
