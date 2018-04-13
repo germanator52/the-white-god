@@ -14,6 +14,8 @@ public class DoorManagerScript : MonoBehaviour {
 
     bool town;
 
+    public bool townEntry;
+
 	void Awake()
     {
         instance = this;

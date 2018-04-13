@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\StairScript.cs" />
     <Compile Include="Assets\Scripts\StartScript.cs" />
     <Compile Include="Assets\Scripts\TextControlScript.cs" />
+    <Compile Include="Assets\Scripts\TownEntryScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

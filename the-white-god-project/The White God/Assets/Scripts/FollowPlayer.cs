@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour {
 
+    public static FollowPlayer instance;
+
+    public bool cutscene = false;
+
     public Transform target;
 
     public float smoothSpeed = 0.125f;
 
     public Vector3 offset;
 
+    private void Start()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
-        target = GameObject.FindWithTag("Player").transform;
+            target = GameObject.FindWithTag("Player").transform;
     }
 
     private void LateUpdate()
