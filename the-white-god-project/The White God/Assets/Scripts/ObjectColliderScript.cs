@@ -159,6 +159,8 @@ public class ObjectColliderScript : MonoBehaviour {
         }
         else if (i == 9)
         {
+            yield return new WaitForSeconds(1.0f);
+            canvas.SetActive(false);
             rumble.Play();
             yield return new WaitForSeconds(3.0f);
             rumble.Stop();
